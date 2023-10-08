@@ -1,0 +1,28 @@
+<!-- templates/typing_interface.html -->
+<div>
+    <h1>Typing Interface</h1>
+    <p id="exerciseText">{{ exercise.text }}</p>
+    <textarea id="userInput" placeholder="Start typing..."></textarea>
+    <button onclick="calculateSpeed()">Calculate Speed</button>
+</div>
+
+<script>
+    function calculateSpeed() {
+        const exerciseText = document.getElementById('exerciseText').innerText;
+        const userInput = document.getElementById('userInput').value;
+        
+        // Split exercise text and user input into words
+        const exerciseWords = exerciseText.trim().split(' ');
+        const userWords = userInput.trim().split(' ');
+
+        // Count words in exercise text and user input
+        const totalWords = exerciseWords.length;
+        const typedWords = userWords.length;
+
+        // Calculate typing speed (words per minute)
+        const typingSpeed = (typedWords / totalWords) * 60;  // Assuming 1 word = 1 minute
+
+        alert('Typing speed: ' + typingSpeed.toFixed(2) + ' words per minute');
+    }
+</script>
+    

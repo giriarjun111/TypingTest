@@ -1,0 +1,7 @@
+<!-- exercises/templates/exercises/exercise_list.html -->
+<h1>Exercise List</h1>
+<ul>
+  {% for exercise in exercises %}
+    <li><a href="{% url 'exercise_detail' exercise.id %}">Exercise {{ exercise.id }}</a></li>
+  {% endfor %}
+</ul>
